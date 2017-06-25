@@ -12,5 +12,35 @@ then add to your hosts file
 `
 127.0.0.1 demo.app
 `
+## Modules
+On start you have module Users - look for it - it has laravel base structure. 
+Your struct can controlled by config/modules.php
+
+You can generate your own modules by 
+```
+docker exec -ti laravel_app /bin/bash
+php artisan module:make Posts
+```
+It generates new struct for module Posts in modules
+Folder modules has Modules namespace - you can check it in composer.json
+
+## Namespaces on views,langs,configs
+Example is Users module
+You can use it views in blade directive @include
+```
+@include("users::some_view_name")
+```
+If you want to use Users langs - you should use
+```
+trans("users::some_lang_name")
+```
+If you want to use Users configs - you should use
+```
+config('users.some_users_config')
+```
+
+## Stubs
+You have control on new generating files for new modules
+it placed on /resources/stubs
 
 ## Start hacking
