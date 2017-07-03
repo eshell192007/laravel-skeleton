@@ -45,7 +45,7 @@ services:
       - app
 
   app:
-    image: osr:build
+    image: laravel_skeleton:build
     build: .
     container_name: "laravel_app"
     volumes:
