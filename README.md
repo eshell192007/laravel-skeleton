@@ -43,4 +43,12 @@ config('users.some_users_config')
 You have control on new generating files for new modules
 it placed on /resources/stubs
 
+## 4 use in production
+Look at docker/caddy/Caddyfile
+rename demo.app to your own host/domain registereg for server
+
+If you want to use ssl (Let's Encrypt) rename http to https in that file 
+
+Look for #Install Step, command docker-compose up, and go to http(s)://yourdomain.com
+
 ## Start hacking
