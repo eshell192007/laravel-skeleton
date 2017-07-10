@@ -45,7 +45,7 @@ it placed on /resources/stubs
 
 ## 4 use in production
 Look at docker/caddy/Caddyfile
-rename demo.app to your own host/domain registereg for server
+rename demo.app to your own host/domain registered for server
 
 If you want to use ssl (Let's Encrypt) rename http to https in that file 
 
