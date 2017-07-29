@@ -28,7 +28,8 @@ class LoginController extends Controller
     protected $redirectTo = '/home';
 
     /**
-     * Show login form
+     * Show login form.
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function showLoginForm()

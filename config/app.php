@@ -163,7 +163,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-
         /*
          * Package Service Providers...
          */
@@ -229,7 +228,7 @@ return [
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
         'Module'       => Nwidart\Modules\Facades\Module::class,
-        'Image'        => Intervention\Image\Facades\Image::class
+        'Image'        => Intervention\Image\Facades\Image::class,
     ],
 
 ];
