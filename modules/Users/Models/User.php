@@ -3,12 +3,11 @@
 namespace Modules\Users\Models;
 
 use Carbon\Carbon;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-
     use Notifiable;
 
     /**
@@ -31,7 +30,7 @@ class User extends Authenticatable
         'city_id',
         'avatar',
         'payed_to',
-        'block'
+        'block',
     ];
 
     /**
@@ -56,17 +55,17 @@ class User extends Authenticatable
         return implode(' ', [$this->name, $this->surname]);
     }
 
-
     /**
      * Payed attribute
-     * TODO refactor
+     * TODO refactor.
+     *
      * @param $value
      */
     public function setPayedToAttribute($value)
     {
         if (isset($this->attributes['payed_to']) && is_int($value)) {
             $superTime = Carbon::parse($this->attributes['payed_to']);
-            $nowTime   = Carbon::now();
+            $nowTime = Carbon::now();
 
             $this->attributes['payed_to'] = ($superTime >= $nowTime)
                 ? $superTime->addMonths($value)
@@ -76,26 +75,23 @@ class User extends Authenticatable
 
     public function setBlockAttribute($value)
     {
-
         if (isset($this->attributes['block_to']) && is_int($value)) {
             $superTime = Carbon::parse($this->attributes['block_to']);
-            $nowTime   = Carbon::now();
+            $nowTime = Carbon::now();
             if ($superTime >= $nowTime) {
                 $this->attributes['block_to'] = $superTime->addDays($value);
             } else {
                 $this->attributes['block_to'] = $nowTime->addDays($value);
             }
         } else {
-            $nowTime                      = Carbon::now();
+            $nowTime = Carbon::now();
             $this->attributes['block_to'] = $nowTime->addDays($value);
         }
-
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-
     public function agency()
     {
         return $this->belongsTo('App\Agency', 'agency_id');

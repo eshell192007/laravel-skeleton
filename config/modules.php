@@ -24,23 +24,23 @@ return [
 
     'stubs' => [
         'enabled' => true,
-        'path' => base_path() . '/resources/stubs',
-        'files' => [
-            'start' => 'start.php',
-            'routes' => 'routes/web.php',
-            'views/index' => 'resources/views/index.blade.php',
-            'views/master' => 'resources/views/layouts/master.blade.php',
+        'path'    => base_path().'/resources/stubs',
+        'files'   => [
+            'start'           => 'start.php',
+            'routes'          => 'routes/web.php',
+            'views/index'     => 'resources/views/index.blade.php',
+            'views/master'    => 'resources/views/layouts/master.blade.php',
             'scaffold/config' => 'config/config.php',
-            'composer' => 'composer.json',
+            'composer'        => 'composer.json',
         ],
         'replacements' => [
-            'start' => ['LOWER_NAME'],
-            'routes' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE'],
-            'json' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE'],
-            'views/index' => ['LOWER_NAME'],
-            'views/master' => ['STUDLY_NAME'],
+            'start'           => ['LOWER_NAME'],
+            'routes'          => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE'],
+            'json'            => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE'],
+            'views/index'     => ['LOWER_NAME'],
+            'views/master'    => ['STUDLY_NAME'],
             'scaffold/config' => ['STUDLY_NAME'],
-            'composer' => [
+            'composer'        => [
                 'LOWER_NAME',
                 'STUDLY_NAME',
                 'VENDOR',
@@ -93,23 +93,23 @@ return [
         */
 
         'generator' => [
-            'config' => 'Config',
-            'command' => 'Console',
-            'event' => 'Events',
-            'listener' => 'Listeners',
-            'migration' => 'Database/Migrations',
-            'model' => 'Models',
-            'repository' => 'Repositories',
-            'seeder' => 'Database/Seeders',
-            'controller' => 'Http/Controllers',
-            'filter' => 'Http/Middleware',
-            'request' => 'Http/Requests',
-            'provider' => 'Providers',
-            'lang' => 'resources/lang',
-            'views' => 'resources/views',
-            'test' => 'Tests',
-            'jobs' => 'Jobs',
-            'emails' => 'Emails',
+            'config'        => 'Config',
+            'command'       => 'Console',
+            'event'         => 'Events',
+            'listener'      => 'Listeners',
+            'migration'     => 'Database/Migrations',
+            'model'         => 'Models',
+            'repository'    => 'Repositories',
+            'seeder'        => 'Database/Seeders',
+            'controller'    => 'Http/Controllers',
+            'filter'        => 'Http/Middleware',
+            'request'       => 'Http/Requests',
+            'provider'      => 'Providers',
+            'lang'          => 'resources/lang',
+            'views'         => 'resources/views',
+            'test'          => 'Tests',
+            'jobs'          => 'Jobs',
+            'emails'        => 'Emails',
             'notifications' => 'Notifications',
         ],
     ],
@@ -125,7 +125,7 @@ return [
 
     'scan' => [
         'enabled' => false,
-        'paths' => [
+        'paths'   => [
             base_path('vendor/*/*'),
         ],
     ],
@@ -141,7 +141,7 @@ return [
     'composer' => [
         'vendor' => 'aios',
         'author' => [
-            'name' => 'Dave Aios',
+            'name'  => 'Dave Aios',
             'email' => 'aioslike@gmail.com',
         ],
     ],
@@ -154,8 +154,8 @@ return [
     |
     */
     'cache' => [
-        'enabled' => false,
-        'key' => 'laravel-modules',
+        'enabled'  => false,
+        'key'      => 'laravel-modules',
         'lifetime' => 60,
     ],
     /*

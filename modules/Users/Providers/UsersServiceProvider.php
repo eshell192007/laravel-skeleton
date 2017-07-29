@@ -2,8 +2,8 @@
 
 namespace Modules\Users\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\ServiceProvider;
 
 class UsersServiceProvider extends ServiceProvider
 {
@@ -64,11 +64,11 @@ class UsersServiceProvider extends ServiceProvider
         $sourcePath = __DIR__.'/../resources/views';
 
         $this->publishes([
-            $sourcePath => $viewPath
+            $sourcePath => $viewPath,
         ]);
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
-            return $path . '/modules/users';
+            return $path.'/modules/users';
         }, \Config::get('view.paths')), [$sourcePath]), 'users');
     }
 
@@ -84,18 +84,19 @@ class UsersServiceProvider extends ServiceProvider
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, 'users');
         } else {
-            $this->loadTranslationsFrom(__DIR__ .'/../resources/lang', 'users');
+            $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'users');
         }
     }
 
     /**
      * Register an additional directory of factories.
+     *
      * @source https://github.com/sebastiaanluca/laravel-resource-flow/blob/develop/src/Modules/ModuleServiceProvider.php#L66
      */
     public function registerFactories()
     {
-        if (! app()->environment('production')) {
-            app(Factory::class)->load(__DIR__ . '/Database/factories');
+        if (!app()->environment('production')) {
+            app(Factory::class)->load(__DIR__.'/Database/factories');
         }
     }
 
